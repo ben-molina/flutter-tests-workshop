@@ -19,7 +19,7 @@ class CatsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: const Text('Cats Breeds'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -55,7 +55,7 @@ class CatsList extends StatelessWidget {
                     title: Text(cat.name),
                     leading: const CircleAvatar(
                       // Display the Flutter Logo image asset.
-                      foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+                      foregroundImage: AssetImage('assets/images/cat.png'),
                     ),
                     onTap: () {
                       Navigator.pushNamed(
