@@ -20,3 +20,8 @@ the API key obtained from https://thecatapi.com/
         }
     ]
 }
+
+# Useful commands
+
+flutter test --coverage
+flutter run test/src/app_integration_test.dart

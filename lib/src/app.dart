@@ -6,6 +6,7 @@ import 'package:workshop/src/cats/cats_details.dart';
 
 import 'cats/cats_list.dart';
 import 'cats/cats_notifier.dart';
+import 'sample_feature/sample_item_list_view.dart';
 import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
 
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
   const MyApp({
     super.key,
     required this.settingsController,
-    required this.catsNotifier,
+    this.catsNotifier,
   });
 
   final SettingsController settingsController;
-  final CatsNotifier catsNotifier;
+  final CatsNotifier? catsNotifier;
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +78,11 @@ class MyApp extends StatelessWidget {
                     return CatsDetails(cat: cat);
                   case CatsList.routeName:
                   default:
-                    return CatsList(
-                      catsNotifier: catsNotifier,
-                    );
+                    return catsNotifier != null
+                        ? CatsList(
+                            catsNotifier: catsNotifier!,
+                          )
+                        : SampleItemListView();
                 }
               },
             );
